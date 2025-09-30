@@ -13,7 +13,7 @@ const CollectionCard: React.FC<CollectionCardProps> = ({ collection }) => {
       <img
         src={collection.image}
         alt={collection.name}
-        className="w-full h-64 object-cover"
+        className="w-full h-96 object-cover"
       />
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2">{collection.name}</h3>
