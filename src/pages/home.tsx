@@ -56,7 +56,7 @@ const Home = () => {
           <h3 className="text-3xl font-bold font-serif text-center mb-12">
             Featured Products
           </h3>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {featuredProducts.slice(0, 4).map((prod) => (
               <ProductCard key={prod.id} product={prod} />
             ))}

@@ -1,6 +1,6 @@
 const AboutPage = () => {
   return (
-    <div className="font-sans bg-gray-50 text-gray-800">
+    <div className="font-sans bg-gray-50 text-gray-800 space-y-4">
       {/* Hero / About Header */}
       <header className="relative min-h-[40vh] flex flex-col justify-center items-center text-white text-center px-6 bg-gradient-main">
         <h1 className="text-4xl md:text-6xl font-serif font-bold drop-shadow-lg">
@@ -13,7 +13,7 @@ const AboutPage = () => {
       </header>
 
       {/* About Content */}
-      <main className="pt-20 mx-auto space-y-16">
+      <main className="pt-20 mx-auto space-y-16 px-4">
         {/* Our Story */}
         <section className="text-center max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold font-serif mb-6">Our Story</h2>
@@ -74,37 +74,35 @@ const AboutPage = () => {
             ))}
           </div>
         </section>
-
-        {/* Newsletter */}
-        <section className="bg-gradient-main py-20 text-white text-center">
-          <h3 className="text-3xl font-bold font-serif mb-4">
-            Stay in the Loop
-          </h3>
-          <p className="mb-6">
-            Subscribe to our newsletter for the latest updates
-          </p>
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="flex flex-col md:flex-row items-center justify-center gap-4"
-          >
-            <label htmlFor="email" className="sr-only">
-              Email Address
-            </label>
-            <input
-              type="email"
-              id="email"
-              placeholder="Enter your email"
-              className="px-6 py-3 rounded-full text-gray-800 w-72 focus:outline-none bg-zinc-100"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 rounded-full bg-white text-red-500 font-semibold transform hover:scale-105 hover:bg-red-500 hover:text-white transition cursor-pointer"
-            >
-              Subscribe
-            </button>
-          </form>
-        </section>
       </main>
+
+      {/* Newsletter */}
+      <section className="bg-gradient-main py-20 text-white text-center px-4">
+        <h3 className="text-3xl font-bold font-serif mb-4">Stay in the Loop</h3>
+        <p className="mb-6">
+          Subscribe to our newsletter for the latest updates
+        </p>
+        <form
+          onSubmit={(e) => e.preventDefault()}
+          className="flex flex-col md:flex-row items-center justify-center gap-4"
+        >
+          <label htmlFor="email" className="sr-only">
+            Email Address
+          </label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            className="px-6 py-3 rounded-full text-gray-800 w-72 focus:outline-none bg-zinc-100"
+          />
+          <button
+            type="submit"
+            className="px-6 py-3 rounded-full bg-white text-red-500 font-semibold transform hover:scale-105 hover:bg-red-500 hover:text-white transition cursor-pointer"
+          >
+            Subscribe
+          </button>
+        </form>
+      </section>
     </div>
   );
 };
