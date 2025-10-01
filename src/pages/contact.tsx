@@ -16,7 +16,6 @@ const ContactPage = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // You can integrate with API or email service here
   };
 
   const contactInfo = [
@@ -52,9 +51,9 @@ const ContactPage = () => {
 
       {/* Contact Section: Form + Info */}
       <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-12">
+        <div className="max-w-6xl mx-auto md:grid md:grid-cols-5 gap-12">
           {/* Contact Info */}
-          <div className="space-y-8 col-span-2">
+          <div className="space-y-8 col-span-2 w-full">
             <h3 className="text-3xl font-bold font-serif mb-6 text-gray-800 text-center md:text-left">
               Our Contact Info
             </h3>

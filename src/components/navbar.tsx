@@ -1,8 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   const activeClass = "text-red-500 font-semibold";
   const normalClass = "text-gray-800 hover:text-red-500 transition";
@@ -12,7 +24,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed w-full top-0 z-50 bg-white shadow-md">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-6 py-4 flex justify-between items-center relative">
         <NavLink
           to="/"
           className="text-2xl font-bold text-gradient-main font-serif"
@@ -45,7 +57,7 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Menu */}
-        <div className="md:hidden relative">
+        <div className="md:hidden ">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="cursor-pointer flex items-center justify-center w-8 h-8"
@@ -67,7 +79,7 @@ const Navbar = () => {
           </button>
 
           {isOpen && (
-            <ul className="absolute left-0 top-16 w-full bg-white shadow-lg flex flex-col items-center space-y-20 py-6 h-[100vh]">
+            <ul className="absolute left-0 top-full w-full bg-white shadow-lg flex flex-col items-center space-y-20 py-6 h-[100vh]">
               <li>
                 <NavLink
                   to="/"
