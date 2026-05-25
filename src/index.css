@@ -1,12 +1,23 @@
 @import "tailwindcss";
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @layer utilities {
   .bg-gradient-main {
     background: linear-gradient(135deg, #f59e0b, #ef4444);
-  }
-
-  .bg-gradient-hover {
-    background: linear-gradient(135deg, #ef4444, #f59e0b);
   }
 
   .text-gradient-main {
@@ -15,4 +26,45 @@
     background-clip: text;
     color: transparent;
   }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out forwards;
+  }
+
+  .animate-slide-down {
+    animation: slideDown 0.25s ease-out forwards;
+  }
+
+  .font-serif {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+
+  .font-sans {
+    font-family: "Inter", system-ui, sans-serif;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure cursor-pointer on all interactive elements */
+button,
+a,
+select,
+[role="button"] {
+  cursor: pointer;
 }
