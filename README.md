@@ -122,13 +122,13 @@ All product and collection data lives in `src/data/db.ts`. Types are consolidate
 ## Getting Started
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 The dev server starts at `http://localhost:5173`.
 
 ```bash
-npm run build   # production build → dist/
-npm run preview # preview the production build locally
+pnpm build    # production build → dist/
+pnpm preview  # preview the production build locally
 ```
